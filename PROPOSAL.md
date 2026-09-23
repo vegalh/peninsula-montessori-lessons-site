@@ -18,3 +18,7 @@ Main searching page, click-in page for each lessons plan, account page with basi
 
 A sketch of the layout, drawn by hand and photographed or made in Figma, committed to the repo.
 The description of that layout you gave to AI as your starting prompt.
+
+![Hand-drawn layout sketch](handdraw.jpg)
+
+![Chat-assisted layout mockup](Chathelpdraw.jpg)
