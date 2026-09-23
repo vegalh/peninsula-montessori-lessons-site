@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature Collage &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-title-row">
+      <a class="icon-btn" href="index.html" aria-label="Back to Discover">&larr;</a>
+      <h1 class="detail-title">Nature Collage</h1>
+    </div>
+    <button type="button" class="icon-btn save-btn" id="detail-save" aria-pressed="false" aria-label="Save Nature Collage">&hearts;</button>
+  </header>
+
+  <main class="page lesson-detail">
+    <div class="lesson-detail-grid">
+      <div class="lesson-detail-media">
+        <img src="https://picsum.photos/seed/nature-collage/800/600" alt="A collage made from leaves, twigs, and flower petals" class="lesson-detail-hero">
+        <div class="lesson-detail-gallery">
+          <img src="https://picsum.photos/seed/nature-collage-2/300/300" alt="Close-up of glued leaves on paper">
+          <img src="https://picsum.photos/seed/nature-collage-3/300/300" alt="Basket of collected nature materials">
+        </div>
+      </div>
+
+      <div class="lesson-detail-info">
+        <p class="lesson-detail-badges">
+          <span class="badge">3&ndash;5 years</span>
+          <span class="badge">Art</span>
+          <span class="badge">Fall</span>
+        </p>
+        <p class="lesson-card-stats">
+          <span>&#9689; 20 min</span>
+          <span>&#9633; 6 materials</span>
+        </p>
+
+        <h2>Materials Required</h2>
+        <ul class="lesson-detail-list">
+          <li>Construction paper</li>
+          <li>Non-toxic glue sticks</li>
+          <li>Assorted leaves, twigs, and flower petals</li>
+          <li>Small basket for collected materials</li>
+          <li>Scissors</li>
+          <li>Tray to contain mess</li>
+        </ul>
+
+        <h2>Step-by-Step Instructions</h2>
+        <ol class="lesson-detail-list">
+          <li>Take a short walk to collect leaves, twigs, and petals together.</li>
+          <li>Lay out the collected materials on a tray and let the child arrange them on paper.</li>
+          <li>Show the child how to apply a small amount of glue and press each piece down.</li>
+          <li>Let the collage dry flat before moving it.</li>
+        </ol>
+
+        <h2>Notes</h2>
+        <p>A calm, open-ended art activity. Great for fine motor skills and appreciation of natural materials.</p>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item" href="my-week.html"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    var detailSave = document.getElementById('detail-save');
+    detailSave.addEventListener('click', function () {
+      var pressed = detailSave.getAttribute('aria-pressed') === 'true';
+      detailSave.setAttribute('aria-pressed', String(!pressed));
+    });
+  </script>
+</body>
+</html>

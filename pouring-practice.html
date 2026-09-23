@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pouring Practice &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-title-row">
+      <a class="icon-btn" href="index.html" aria-label="Back to Discover">&larr;</a>
+      <h1 class="detail-title">Pouring Practice</h1>
+    </div>
+    <button type="button" class="icon-btn save-btn" id="detail-save" aria-pressed="false" aria-label="Save Pouring Practice">&hearts;</button>
+  </header>
+
+  <main class="page lesson-detail">
+    <div class="lesson-detail-grid">
+      <div class="lesson-detail-media">
+        <img src="https://picsum.photos/seed/pouring-practice/800/600" alt="A child pouring water from a small pitcher into a cup" class="lesson-detail-hero">
+        <div class="lesson-detail-gallery">
+          <img src="https://picsum.photos/seed/pouring-practice-2/300/300" alt="Close-up of hands gripping a small pitcher">
+          <img src="https://picsum.photos/seed/pouring-practice-3/300/300" alt="Tray set up with pitcher and two cups">
+        </div>
+      </div>
+
+      <div class="lesson-detail-info">
+        <p class="lesson-detail-badges">
+          <span class="badge">2&ndash;3 years</span>
+          <span class="badge">Practical Life</span>
+          <span class="badge">Fall</span>
+        </p>
+        <p class="lesson-card-stats">
+          <span>&#9689; 8 min</span>
+          <span>&#9633; 4 materials</span>
+        </p>
+
+        <h2>Materials Required</h2>
+        <ul class="lesson-detail-list">
+          <li>Small pitcher</li>
+          <li>Two small cups</li>
+          <li>Tray to contain spills</li>
+          <li>Sponge or cloth for cleanup</li>
+        </ul>
+
+        <h2>Step-by-Step Instructions</h2>
+        <ol class="lesson-detail-list">
+          <li>Fill the pitcher partway with water and place it on the tray next to an empty cup.</li>
+          <li>Show the child how to hold the pitcher with both hands and pour slowly.</li>
+          <li>Invite the child to pour water into the cup, then pour it back into the pitcher.</li>
+          <li>Encourage the child to wipe up any spills with the sponge.</li>
+        </ol>
+
+        <h2>Notes</h2>
+        <p>Builds concentration and fine motor control. Start with a small amount of water to reduce spills.</p>
+
+        <!-- Recording is attached to the lesson plan on the backend; no upload UI here -->
+        <h2>Music / Recording</h2>
+        <audio class="lesson-audio" controls src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="></audio>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item" href="my-week.html"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    var detailSave = document.getElementById('detail-save');
+    detailSave.addEventListener('click', function () {
+      var pressed = detailSave.getAttribute('aria-pressed') === 'true';
+      detailSave.setAttribute('aria-pressed', String(!pressed));
+    });
+  </script>
+</body>
+</html>

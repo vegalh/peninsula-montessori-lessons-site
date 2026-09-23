@@ -11,7 +11,7 @@ Static HTML/CSS/JS prototype for a Montessori lesson-planning site. No build ste
 ## Styling conventions
 
 - All colors, fonts, spacing, radius, and shadow values must come from the CSS custom properties defined in the `:root` block of [css/style.css](css/style.css). Do not hardcode new color/size values in markup or CSS — add a new custom property to `:root` instead, and if a needed value doesn't exist, ask before inventing one.
-- Layout is mobile-first: base styles target small screens, with `@media (min-width: ...)` used to progressively enhance for larger viewports (existing breakpoints are 480px and 640px).
+- Layout is mobile-first: base styles target small screens, with `@media (min-width: ...)` used to progressively enhance for larger viewports (existing breakpoints are 480px, 640px, and 1024px for desktop).
 - One accent color (`--accent`) is used sparingly; the extended palette (`--terracotta`, `--peach`, `--dusty-pink`, `--soft-yellow`, `--sage`) is for category/decorative accents only.
 
 ## Interactive elements

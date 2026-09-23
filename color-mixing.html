@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Mixing &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-title-row">
+      <a class="icon-btn" href="index.html" aria-label="Back to Discover">&larr;</a>
+      <h1 class="detail-title">Color Mixing</h1>
+    </div>
+    <button type="button" class="icon-btn save-btn" id="detail-save" aria-pressed="false" aria-label="Save Color Mixing">&hearts;</button>
+  </header>
+
+  <main class="page lesson-detail">
+    <div class="lesson-detail-grid">
+      <div class="lesson-detail-media">
+        <img src="https://picsum.photos/seed/color-mixing/800/600" alt="Cups of colored water being mixed together" class="lesson-detail-hero">
+        <div class="lesson-detail-gallery">
+          <img src="https://picsum.photos/seed/color-mixing-2/300/300" alt="Close-up of blue and yellow water mixing to green">
+          <img src="https://picsum.photos/seed/color-mixing-3/300/300" alt="Tray set up with pipettes and color cups">
+        </div>
+      </div>
+
+      <div class="lesson-detail-info">
+        <p class="lesson-detail-badges">
+          <span class="badge">3&ndash;4 years</span>
+          <span class="badge">Science</span>
+          <span class="badge">Colors</span>
+        </p>
+        <p class="lesson-card-stats">
+          <span>&#9689; 15 min</span>
+          <span>&#9633; 5 materials</span>
+        </p>
+
+        <h2>Materials Required</h2>
+        <ul class="lesson-detail-list">
+          <li>Clear cups (6)</li>
+          <li>Red, blue, and yellow liquid watercolor</li>
+          <li>Pipettes or droppers</li>
+          <li>Water</li>
+          <li>Tray to contain spills</li>
+        </ul>
+
+        <h2>Step-by-Step Instructions</h2>
+        <ol class="lesson-detail-list">
+          <li>Fill three cups with water and add one primary color to each.</li>
+          <li>Set out three empty cups for mixing.</li>
+          <li>Show the child how to use a pipette to draw up color and drop it into an empty cup.</li>
+          <li>Invite the child to combine two primary colors and observe the new color that forms.</li>
+        </ol>
+
+        <h2>Notes</h2>
+        <p>Wear smocks or work near a sink. Great for introducing basic color theory vocabulary (primary, secondary).</p>
+
+        <!-- Recording is attached to the lesson plan on the backend; no upload UI here -->
+        <h2>Music / Recording</h2>
+        <audio class="lesson-audio" controls src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="></audio>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item" href="my-week.html"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    var detailSave = document.getElementById('detail-save');
+    detailSave.addEventListener('click', function () {
+      var pressed = detailSave.getAttribute('aria-pressed') === 'true';
+      detailSave.setAttribute('aria-pressed', String(!pressed));
+    });
+  </script>
+</body>
+</html>

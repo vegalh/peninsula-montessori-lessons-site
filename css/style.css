@@ -104,6 +104,7 @@ a {
 
 .page {
   position: relative;
+  min-width: 0;
   padding: var(--space);
   max-width: 960px;
   margin: 0 auto;
@@ -117,6 +118,35 @@ a {
 
   .page {
     padding: calc(var(--space) * 1.5);
+  }
+}
+
+/* Desktop: wider canvas, top nav instead of bottom tab bar, search bar always visible */
+@media (min-width: 1024px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .site-header {
+    padding: var(--space) calc(var(--space) * 2);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header { order: 1; }
+  .bottom-nav { order: 2; }
+  .page { order: 3; }
+
+  .page {
+    max-width: 1200px;
+    padding: calc(var(--space) * 1.5) calc(var(--space) * 2);
+  }
+
+  .icon-btn {
+    display: none;
   }
 }
 
@@ -176,6 +206,13 @@ a {
 
   .search-bar .btn {
     flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-bar {
+    display: flex;
+    margin-top: 0;
   }
 }
 
@@ -273,10 +310,16 @@ a {
   }
 }
 
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
 /* Lesson plan cards: two-column, picture-forward grid */
 .lesson-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: calc(var(--space) / 2);
   margin-top: var(--space);
 }
@@ -284,6 +327,12 @@ a {
 @media (min-width: 640px) {
   .lesson-grid {
     gap: var(--space);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lesson-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -376,7 +425,7 @@ a {
   border: 1px solid var(--border);
 }
 
-/* Persistent bottom navigation */
+/* Persistent bottom navigation on mobile; becomes a top nav bar on desktop */
 .bottom-nav {
   position: fixed;
   left: 0;
@@ -411,6 +460,268 @@ a {
 
 .nav-item.is-active {
   color: var(--accent);
+}
+
+@media (min-width: 1024px) {
+  .bottom-nav {
+    position: static;
+    height: auto;
+    justify-content: flex-end;
+    gap: calc(var(--space) * 1.5);
+    padding: var(--space) calc(var(--space) * 2) 0;
+    border-top: none;
+    box-shadow: none;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: calc(var(--space) / 4);
+  }
+}
+
+/* Lesson detail page */
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size-xl) * 1.1);
+  line-height: 1;
+  margin: 0;
+}
+
+.lesson-detail-hero {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.lesson-detail-gallery {
+  display: flex;
+  gap: calc(var(--space) / 2);
+  margin-top: calc(var(--space) / 2);
+}
+
+.lesson-detail-gallery img {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.lesson-detail-info {
+  margin-top: calc(var(--space) * 1.5);
+}
+
+.lesson-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--space) / 2);
+  margin: 0 0 var(--space);
+}
+
+.badge {
+  display: inline-block;
+  padding: calc(var(--space) / 4) calc(var(--space) / 1.5);
+  border-radius: 999px;
+  background: var(--sage);
+  color: var(--text);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.lesson-detail-list {
+  padding-left: 1.25em;
+  margin: 0 0 var(--space);
+}
+
+.lesson-detail-list li {
+  margin-bottom: calc(var(--space) / 4);
+}
+
+.section-optional {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+}
+
+.lesson-audio {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .lesson-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--space) * 2);
+    align-items: start;
+  }
+
+  .lesson-detail-info {
+    margin-top: 0;
+  }
+}
+
+/* My Week page */
+.week-tabs {
+  display: flex;
+  gap: calc(var(--space) / 4);
+  padding: calc(var(--space) / 4);
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.week-tab {
+  flex: 1;
+  padding: calc(var(--space) / 2) var(--space);
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.week-tab[aria-selected="true"] {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.week-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) / 2);
+  margin-top: var(--space);
+}
+
+.week-list[hidden] {
+  display: none;
+}
+
+.week-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+  padding: calc(var(--space) / 2);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.week-card-thumb {
+  flex: 0 0 auto;
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.week-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.week-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.week-card .save-btn {
+  flex: 0 0 auto;
+}
+
+.week-card[hidden] {
+  display: none;
+}
+
+.week-quote {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: calc(var(--space) * 2);
+}
+
+/* Account page */
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+  padding: var(--space);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.account-fields {
+  min-width: 0;
+}
+
+.account-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.account-name {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size-xl) * 0.7);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.account-email {
+  color: var(--text-muted);
+  margin: calc(var(--space) / 4) 0 var(--space);
+  overflow-wrap: break-word;
+}
+
+.history-list {
+  list-style: none;
+  margin: var(--space) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) / 2);
+}
+
+.history-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space);
+  padding: var(--space);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.history-title {
+  font-weight: 700;
+}
+
+.history-date {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
 }
 
 /* Decorative watercolor botanical shapes, purely visual */

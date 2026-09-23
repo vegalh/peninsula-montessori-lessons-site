@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Week &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>My Week</h1>
+      <p class="page-intro">Plan, save, and bring ideas to life</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="week-tabs" role="tablist" aria-label="My Week views">
+      <button type="button" class="week-tab" id="tab-saved" role="tab" aria-selected="true" aria-controls="panel-saved">Saved</button>
+      <button type="button" class="week-tab" id="tab-plan" role="tab" aria-selected="false" aria-controls="panel-plan">Weekly Plan</button>
+      <button type="button" class="week-tab" id="tab-completed" role="tab" aria-selected="false" aria-controls="panel-completed">Completed</button>
+    </div>
+
+    <section class="week-list" id="panel-saved" role="tabpanel" aria-labelledby="tab-saved">
+      <article class="week-card" data-lesson="leaf-transfer">
+        <a class="week-card-thumb" href="leaf-transfer.html">
+          <img src="https://picsum.photos/seed/leaf-transfer/200/200" alt="Photo coming soon: leaf transfer activity">
+        </a>
+        <div class="week-card-body">
+          <p class="lesson-card-title">Leaf Transfer</p>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+        <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Leaf Transfer">&hearts;</button>
+      </article>
+
+      <article class="week-card" data-lesson="color-mixing">
+        <a class="week-card-thumb" href="color-mixing.html">
+          <img src="https://picsum.photos/seed/color-mixing/200/200" alt="Photo coming soon: color mixing activity">
+        </a>
+        <div class="week-card-body">
+          <p class="lesson-card-title">Color Mixing</p>
+          <p class="lesson-card-meta">3&ndash;4 years &middot; Science</p>
+          <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; 5 materials</span></p>
+        </div>
+        <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Color Mixing">&hearts;</button>
+      </article>
+
+      <article class="week-card" data-lesson="pouring-practice">
+        <a class="week-card-thumb" href="pouring-practice.html">
+          <img src="https://picsum.photos/seed/pouring-practice/200/200" alt="Photo coming soon: pouring practice activity">
+        </a>
+        <div class="week-card-body">
+          <p class="lesson-card-title">Pouring Practice</p>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 8 min</span><span>&#9633; 4 materials</span></p>
+        </div>
+        <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Pouring Practice">&hearts;</button>
+      </article>
+
+      <article class="week-card" data-lesson="nature-collage">
+        <a class="week-card-thumb" href="nature-collage.html">
+          <img src="https://picsum.photos/seed/nature-collage/200/200" alt="Photo coming soon: nature collage activity">
+        </a>
+        <div class="week-card-body">
+          <p class="lesson-card-title">Nature Collage</p>
+          <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
+          <p class="lesson-card-stats"><span>&#9689; 20 min</span><span>&#9633; 6 materials</span></p>
+        </div>
+        <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Nature Collage">&hearts;</button>
+      </article>
+
+      <p class="page-intro" id="saved-empty" hidden>No saved lessons yet. Tap the heart on any lesson in Discover to save it here.</p>
+    </section>
+
+    <section class="week-list" id="panel-plan" role="tabpanel" aria-labelledby="tab-plan" hidden>
+      <p class="page-intro">No lessons scheduled this week yet. Save a lesson from Discover to add it to your plan.</p>
+    </section>
+
+    <section id="panel-completed" role="tabpanel" aria-labelledby="tab-completed" hidden>
+      <ul class="history-list">
+        <li class="history-item">
+          <span class="history-title">Pouring Practice</span>
+          <span class="history-date">Used Sep 19, 2026</span>
+        </li>
+        <li class="history-item">
+          <span class="history-title">Color Mixing</span>
+          <span class="history-date">Used Sep 15, 2026</span>
+        </li>
+        <li class="history-item">
+          <span class="history-title">Leaf Transfer</span>
+          <span class="history-date">Used Sep 10, 2026</span>
+        </li>
+      </ul>
+    </section>
+
+    <p class="week-quote">&ldquo;Small activities make a big difference.&rdquo; &hearts;</p>
+
+    <div class="watercolor-decor" aria-hidden="true"></div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item is-active" href="my-week.html"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    var tabs = Array.from(document.querySelectorAll('.week-tab'));
+    var panels = {
+      'tab-saved': document.getElementById('panel-saved'),
+      'tab-plan': document.getElementById('panel-plan'),
+      'tab-completed': document.getElementById('panel-completed')
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (other) {
+          other.setAttribute('aria-selected', String(other === tab));
+          panels[other.id].hidden = other !== tab;
+        });
+      });
+    });
+
+    var savedList = document.getElementById('panel-saved');
+    var savedEmpty = document.getElementById('saved-empty');
+
+    savedList.querySelectorAll('.save-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        var card = btn.closest('.week-card');
+        card.hidden = true;
+        var anyVisible = savedList.querySelectorAll('.week-card:not([hidden])').length > 0;
+        savedEmpty.hidden = anyVisible;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>Profile</h1>
+      <p class="page-intro">Your account &amp; saved lessons</p>
+    </div>
+  </header>
+
+  <main class="page account-page">
+    <section class="account-card">
+      <img class="account-photo" src="https://picsum.photos/seed/yoyo-profile/160/160" alt="Yoyo's profile photo">
+      <div class="account-fields">
+        <p class="account-name">Yoyo</p>
+        <p class="account-email">yoyo@peninsulamontessori.example</p>
+        <p class="badge">Teacher</p>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>Favorites</h2>
+    </div>
+    <section class="lesson-grid" aria-label="Favorite lesson plans">
+      <article class="lesson-card">
+        <a href="leaf-transfer.html">
+          <img src="https://picsum.photos/seed/leaf-transfer/400/300" alt="Photo coming soon: leaf transfer activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Leaf Transfer</p>
+            <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Leaf Transfer">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+        </div>
+      </article>
+
+      <article class="lesson-card">
+        <a href="nature-collage.html">
+          <img src="https://picsum.photos/seed/nature-collage/400/300" alt="Photo coming soon: nature collage activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Nature Collage</p>
+            <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Nature Collage">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>Usage History</h2>
+    </div>
+    <ul class="history-list">
+      <li class="history-item">
+        <span class="history-title">Pouring Practice</span>
+        <span class="history-date">Used Sep 19, 2026</span>
+      </li>
+      <li class="history-item">
+        <span class="history-title">Color Mixing</span>
+        <span class="history-date">Used Sep 15, 2026</span>
+      </li>
+      <li class="history-item">
+        <span class="history-title">Leaf Transfer</span>
+        <span class="history-date">Used Sep 10, 2026</span>
+      </li>
+    </ul>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item" href="my-week.html"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item is-active" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    document.querySelectorAll('.save-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        var pressed = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!pressed));
+      });
+    });
+  </script>
+</body>
+</html>
