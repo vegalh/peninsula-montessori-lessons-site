@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>Discover</h1>
+      <p class="page-intro">Meaningful activities for curious minds</p>
+    </div>
+    <button type="button" class="icon-btn" id="search-toggle" aria-expanded="false" aria-controls="search-bar" aria-label="Search activities">🔍</button>
+  </header>
+
+  <main class="page">
+    <form class="search-bar" id="search-bar" role="search">
+      <input type="search" name="q" placeholder="Try &quot;ocean activities&quot;, &quot;fine motor&quot;, &quot;fall&quot;...">
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    <div class="filter-pills">
+      <label class="filter-pill">
+        Age <span class="pill-value" data-value-for="age">2&ndash;3</span> ⌄
+        <select name="age" aria-label="Age filter">
+          <option value="">All</option>
+          <option value="0-2">0&ndash;2</option>
+          <option value="2-3" selected>2&ndash;3</option>
+          <option value="3-4">3&ndash;4</option>
+          <option value="4-5">4&ndash;5</option>
+          <option value="5-6">5&ndash;6</option>
+        </select>
+      </label>
+
+      <label class="filter-pill">
+        Topic <span class="pill-value" data-value-for="topic">All</span> ⌄
+        <select name="topic" aria-label="Topic filter">
+          <option value="">All</option>
+          <option value="fall">Fall</option>
+          <option value="animals">Animals</option>
+          <option value="weather">Weather</option>
+          <option value="plants">Plants</option>
+          <option value="space">Space</option>
+          <option value="community-helpers">Community Helpers</option>
+          <option value="transportation">Transportation</option>
+          <option value="ocean">Ocean</option>
+          <option value="colors">Colors</option>
+          <option value="feelings">Feelings</option>
+          <option value="seasons">Seasons</option>
+          <option value="dinosaurs">Dinosaurs</option>
+          <option value="holidays">Holidays</option>
+        </select>
+      </label>
+
+      <label class="filter-pill">
+        Area <span class="pill-value" data-value-for="area">All</span> ⌄
+        <select name="area" aria-label="Area filter">
+          <option value="">All</option>
+          <option value="practical-life">Practical Life</option>
+          <option value="art">Art</option>
+          <option value="science">Science</option>
+          <option value="math">Math</option>
+          <option value="language">Language</option>
+          <option value="music">Music</option>
+          <option value="movement">Movement</option>
+          <option value="culture">Culture</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="category-grid" role="group" aria-label="Browse by area">
+      <button type="button" class="category-btn" data-area="practical-life" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--terracotta)">🍂</span> Practical Life
+      </button>
+      <button type="button" class="category-btn" data-area="art" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--dusty-pink)">🌈</span> Art
+      </button>
+      <button type="button" class="category-btn" data-area="science" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--sage)">🌱</span> Science
+      </button>
+      <button type="button" class="category-btn" data-area="math" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--soft-yellow)">🧱</span> Math
+      </button>
+      <button type="button" class="category-btn" data-area="language" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--peach)">📖</span> Language
+      </button>
+      <button type="button" class="category-btn" data-area="music" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--dusty-pink)">🎵</span> Music
+      </button>
+      <button type="button" class="category-btn" data-area="movement" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--terracotta)">🏃</span> Movement
+      </button>
+      <button type="button" class="category-btn" data-area="culture" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--sage)">🌎</span> Culture
+      </button>
+    </div>
+
+    <div class="section-title">
+      <h2>Popular This Week</h2>
+      <a href="#">See All &gt;</a>
+    </div>
+
+    <section class="lesson-grid" aria-label="Lessons plans">
+      <article class="lesson-card" data-age="2-3" data-topic="fall" data-area="practical-life">
+        <a href="lesson-detail.html">
+          <img src="https://picsum.photos/seed/leaf-transfer/400/300" alt="Photo coming soon: leaf transfer activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Leaf Transfer</p>
+            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Leaf Transfer">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-age="3-4" data-topic="colors" data-area="science">
+        <a href="lesson-detail.html">
+          <img src="https://picsum.photos/seed/color-mixing/400/300" alt="Photo coming soon: color mixing activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Color Mixing</p>
+            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Color Mixing">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">3&ndash;4 years &middot; Science</p>
+          <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; 5 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-age="2-3" data-topic="fall" data-area="practical-life">
+        <a href="lesson-detail.html">
+          <img src="https://picsum.photos/seed/pouring-practice/400/300" alt="Photo coming soon: pouring practice activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Pouring Practice</p>
+            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Pouring Practice">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 8 min</span><span>&#9633; 4 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-age="3-4" data-topic="fall" data-area="art">
+        <a href="lesson-detail.html">
+          <img src="https://picsum.photos/seed/nature-collage/400/300" alt="Photo coming soon: nature collage activity">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Nature Collage</p>
+            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Nature Collage">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
+          <p class="lesson-card-stats"><span>&#9689; 20 min</span><span>&#9633; 6 materials</span></p>
+        </div>
+      </article>
+    </section>
+
+    <p class="page-intro" id="empty-state" hidden>No lessons plans match your filters.</p>
+
+    <div class="watercolor-decor" aria-hidden="true"></div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item is-active" href="index.html"><span class="nav-icon">🏠</span>Explore</a>
+    <a class="nav-item" href="#"><span class="nav-icon">▣</span>My Week</a>
+    <a class="nav-item" href="account.html"><span class="nav-icon">♙</span>Profile</a>
+  </nav>
+
+  <script>
+    var cards = Array.from(document.querySelectorAll('.lesson-card'));
+    var emptyState = document.getElementById('empty-state');
+    var searchToggle = document.getElementById('search-toggle');
+    var searchBar = document.getElementById('search-bar');
+    var searchInput = searchBar.querySelector('input[name="q"]');
+    var ageSelect = document.querySelector('select[name="age"]');
+    var topicSelect = document.querySelector('select[name="topic"]');
+    var areaSelect = document.querySelector('select[name="area"]');
+    var categoryButtons = Array.from(document.querySelectorAll('.category-btn'));
+
+    searchToggle.addEventListener('click', function () {
+      var isOpen = searchBar.classList.toggle('is-open');
+      searchToggle.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        searchInput.focus();
+      }
+    });
+
+    // Keep each pill's visible label in sync with its hidden native select.
+    function syncPillLabel(select) {
+      var label = document.querySelector('[data-value-for="' + select.name + '"]');
+      var option = select.options[select.selectedIndex];
+      label.textContent = select.value ? option.textContent : 'All';
+    }
+
+    function activeArea() {
+      var pressed = categoryButtons.find(function (btn) {
+        return btn.getAttribute('aria-pressed') === 'true';
+      });
+      return pressed ? pressed.dataset.area : areaSelect.value;
+    }
+
+    function applyFilters() {
+      var query = searchInput.value.trim().toLowerCase();
+      var age = ageSelect.value;
+      var topic = topicSelect.value;
+      var area = activeArea();
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var title = card.querySelector('.lesson-card-title').textContent.toLowerCase();
+        var matches =
+          (!query || title.indexOf(query) !== -1) &&
+          (!age || card.dataset.age === age) &&
+          (!topic || card.dataset.topic === topic) &&
+          (!area || card.dataset.area === area);
+
+        card.hidden = !matches;
+        if (matches) {
+          visibleCount += 1;
+        }
+      });
+
+      emptyState.hidden = visibleCount !== 0;
+    }
+
+    searchBar.addEventListener('submit', function (event) {
+      event.preventDefault();
+      applyFilters();
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+
+    [ageSelect, topicSelect, areaSelect].forEach(function (select) {
+      select.addEventListener('change', function () {
+        syncPillLabel(select);
+        if (select === areaSelect) {
+          categoryButtons.forEach(function (btn) {
+            btn.setAttribute('aria-pressed', String(btn.dataset.area === select.value));
+          });
+        }
+        applyFilters();
+      });
+    });
+
+    categoryButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var alreadyPressed = btn.getAttribute('aria-pressed') === 'true';
+        categoryButtons.forEach(function (other) {
+          other.setAttribute('aria-pressed', 'false');
+        });
+        var nowPressed = !alreadyPressed;
+        btn.setAttribute('aria-pressed', String(nowPressed));
+        areaSelect.value = nowPressed ? btn.dataset.area : '';
+        syncPillLabel(areaSelect);
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('.save-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        var pressed = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!pressed));
+      });
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>
