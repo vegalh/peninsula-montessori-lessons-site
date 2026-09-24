@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peninsula Montessori Lessons</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -103,56 +104,56 @@
     </div>
 
     <section class="lesson-grid" aria-label="Lessons plans">
-      <article class="lesson-card" data-age="2-3" data-topic="fall" data-area="practical-life">
+      <article class="lesson-card" data-lesson="leaf-transfer" data-age="2-3" data-topic="fall" data-area="practical-life">
         <a href="leaf-transfer.html">
           <img src="https://picsum.photos/seed/leaf-transfer/400/300" alt="Photo coming soon: leaf transfer activity">
         </a>
         <div class="lesson-card-body">
           <div class="lesson-card-header">
             <p class="lesson-card-title">Leaf Transfer</p>
-            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Leaf Transfer">&hearts;</button>
+            <button type="button" class="save-btn" data-lesson="leaf-transfer" aria-pressed="false" aria-label="Save Leaf Transfer">&hearts;</button>
           </div>
           <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
           <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 3 materials</span></p>
         </div>
       </article>
 
-      <article class="lesson-card" data-age="3-4" data-topic="colors" data-area="science">
+      <article class="lesson-card" data-lesson="color-mixing" data-age="3-4" data-topic="colors" data-area="science">
         <a href="color-mixing.html">
           <img src="https://picsum.photos/seed/color-mixing/400/300" alt="Photo coming soon: color mixing activity">
         </a>
         <div class="lesson-card-body">
           <div class="lesson-card-header">
             <p class="lesson-card-title">Color Mixing</p>
-            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Color Mixing">&hearts;</button>
+            <button type="button" class="save-btn" data-lesson="color-mixing" aria-pressed="false" aria-label="Save Color Mixing">&hearts;</button>
           </div>
           <p class="lesson-card-meta">3&ndash;4 years &middot; Science</p>
           <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; 5 materials</span></p>
         </div>
       </article>
 
-      <article class="lesson-card" data-age="2-3" data-topic="fall" data-area="practical-life">
+      <article class="lesson-card" data-lesson="pouring-practice" data-age="2-3" data-topic="fall" data-area="practical-life">
         <a href="pouring-practice.html">
           <img src="https://picsum.photos/seed/pouring-practice/400/300" alt="Photo coming soon: pouring practice activity">
         </a>
         <div class="lesson-card-body">
           <div class="lesson-card-header">
             <p class="lesson-card-title">Pouring Practice</p>
-            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Pouring Practice">&hearts;</button>
+            <button type="button" class="save-btn" data-lesson="pouring-practice" aria-pressed="false" aria-label="Save Pouring Practice">&hearts;</button>
           </div>
           <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
           <p class="lesson-card-stats"><span>&#9689; 8 min</span><span>&#9633; 4 materials</span></p>
         </div>
       </article>
 
-      <article class="lesson-card" data-age="3-4" data-topic="fall" data-area="art">
+      <article class="lesson-card" data-lesson="nature-collage" data-age="3-4" data-topic="fall" data-area="art">
         <a href="nature-collage.html">
           <img src="https://picsum.photos/seed/nature-collage/400/300" alt="Photo coming soon: nature collage activity">
         </a>
         <div class="lesson-card-body">
           <div class="lesson-card-header">
             <p class="lesson-card-title">Nature Collage</p>
-            <button type="button" class="save-btn" aria-pressed="false" aria-label="Save Nature Collage">&hearts;</button>
+            <button type="button" class="save-btn" data-lesson="nature-collage" aria-pressed="false" aria-label="Save Nature Collage">&hearts;</button>
           </div>
           <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
           <p class="lesson-card-stats"><span>&#9689; 20 min</span><span>&#9633; 6 materials</span></p>
@@ -261,13 +262,7 @@
       });
     });
 
-    document.querySelectorAll('.save-btn').forEach(function (btn) {
-      btn.addEventListener('click', function (event) {
-        event.preventDefault();
-        var pressed = btn.getAttribute('aria-pressed') === 'true';
-        btn.setAttribute('aria-pressed', String(!pressed));
-      });
-    });
+    PML.initSaveButtons();
 
     applyFilters();
   </script>
