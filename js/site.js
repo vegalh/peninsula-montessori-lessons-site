@@ -5,11 +5,6 @@
   'use strict';
 
   var LESSONS = {
-    'leaf-transfer': { title: 'Leaf Transfer', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'leaf-transfer.html', imgSeed: 'leaf-transfer', alt: 'leaf transfer activity' },
-    'color-mixing': { title: 'Color Mixing', age: '3\u20134 years', area: 'Science', duration: '15 min', materials: 5, href: 'color-mixing.html', imgSeed: 'color-mixing', alt: 'color mixing activity' },
-    'pouring-practice': { title: 'Pouring Practice', age: '2\u20133 years', area: 'Practical Life', duration: '8 min', materials: 4, href: 'pouring-practice.html', imgSeed: 'pouring-practice', alt: 'pouring practice activity' },
-    'nature-collage': { title: 'Nature Collage', age: '3\u20135 years', area: 'Art', duration: '20 min', materials: 6, href: 'nature-collage.html', imgSeed: 'nature-collage', alt: 'nature collage activity' },
-    'storytime-caterpillar': { title: 'Storytime: The Very Hungry Caterpillar', age: '2\u20133 years', area: 'Language', duration: '15 min', materials: 'Book + props', href: 'storytime-caterpillar.html', imgSeed: 'storytime-caterpillar', alt: 'storytime with book and caterpillar props' },
     'cleaning-mirror': { title: 'Cleaning Mirror', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'cleaning-mirror.html', image: 'images/cleaning-mirror.jpg', alt: 'a child spraying and wiping a mirror clean' },
     'making-orange-juice': { title: 'Making Orange Juice', age: '2\u20133 years', area: 'Practical Life', duration: '12 min', materials: 3, href: 'making-orange-juice.html', image: 'images/making-orange-juice.jpg', alt: 'a child using a hand juicer to make orange juice' },
     'mopping': { title: 'Mopping', age: '2\u20133 years', area: 'Practical Life', duration: '15 min', materials: 3, href: 'mopping.html', image: 'images/mopping.jpg', alt: 'a child pushing a child-sized mop across the floor' },
@@ -224,7 +219,7 @@
         '</a>' +
         '<div class="lesson-card-body">' +
           '<div class="lesson-card-header">' +
-            '<p class="lesson-card-title">' + lesson.title + '</p>' +
+            '<a class="lesson-card-title" href="' + lesson.href + '">' + lesson.title + '</a>' +
             '<button type="button" class="save-btn" data-lesson="' + lessonId + '" aria-pressed="true" aria-label="Unsave ' + lesson.title + '">&hearts;</button>' +
           '</div>' +
           '<p class="lesson-card-meta">' + lesson.age + ' &middot; ' + lesson.area + '</p>' +
