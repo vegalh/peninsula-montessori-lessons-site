@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profile &middot; Peninsula Montessori Lessons</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/site.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -16,62 +17,28 @@
 
   <main class="page account-page">
     <section class="account-card">
-      <img class="account-photo" src="https://picsum.photos/seed/yoyo-profile/160/160" alt="Yoyo's profile photo">
+      <img class="account-photo" id="account-photo" src="" alt="">
       <div class="account-fields">
-        <p class="account-name">Yoyo</p>
-        <p class="account-email">yoyo@peninsulamontessori.example</p>
-        <p class="badge">Teacher</p>
+        <p class="account-name" id="account-name"></p>
+        <p class="account-email" id="account-email"></p>
+        <p class="badge" id="account-role"></p>
       </div>
     </section>
+
+    <a class="btn btn-secondary" id="switch-account-link" href="login.html">Switch Account</a>
 
     <div class="section-title">
       <h2>Favorites</h2>
     </div>
-    <section class="lesson-grid" aria-label="Favorite lesson plans">
-      <article class="lesson-card">
-        <a href="leaf-transfer.html">
-          <img src="https://picsum.photos/seed/leaf-transfer/400/300" alt="Photo coming soon: leaf transfer activity">
-        </a>
-        <div class="lesson-card-body">
-          <div class="lesson-card-header">
-            <p class="lesson-card-title">Leaf Transfer</p>
-            <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Leaf Transfer">&hearts;</button>
-          </div>
-          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
-        </div>
-      </article>
-
-      <article class="lesson-card">
-        <a href="nature-collage.html">
-          <img src="https://picsum.photos/seed/nature-collage/400/300" alt="Photo coming soon: nature collage activity">
-        </a>
-        <div class="lesson-card-body">
-          <div class="lesson-card-header">
-            <p class="lesson-card-title">Nature Collage</p>
-            <button type="button" class="save-btn" aria-pressed="true" aria-label="Unsave Nature Collage">&hearts;</button>
-          </div>
-          <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
-        </div>
-      </article>
+    <section class="lesson-grid" id="favorites-grid" aria-label="Favorite lesson plans">
+      <p class="page-intro" id="favorites-empty" hidden>No saved lessons yet. Tap the heart on any lesson in Discover to save it here.</p>
     </section>
 
     <div class="section-title">
       <h2>Usage History</h2>
     </div>
-    <ul class="history-list">
-      <li class="history-item">
-        <span class="history-title">Pouring Practice</span>
-        <span class="history-date">Used Sep 19, 2026</span>
-      </li>
-      <li class="history-item">
-        <span class="history-title">Color Mixing</span>
-        <span class="history-date">Used Sep 15, 2026</span>
-      </li>
-      <li class="history-item">
-        <span class="history-title">Leaf Transfer</span>
-        <span class="history-date">Used Sep 10, 2026</span>
-      </li>
-    </ul>
+    <ul class="history-list" id="history-list"></ul>
+    <p class="page-intro" id="history-empty" hidden>No completed lessons yet.</p>
   </main>
 
   <nav class="bottom-nav" aria-label="Primary">
@@ -81,13 +48,33 @@
   </nav>
 
   <script>
-    document.querySelectorAll('.save-btn').forEach(function (btn) {
-      btn.addEventListener('click', function (event) {
-        event.preventDefault();
-        var pressed = btn.getAttribute('aria-pressed') === 'true';
-        btn.setAttribute('aria-pressed', String(!pressed));
-      });
+    var user = PML.getUser();
+    document.getElementById('account-photo').src = 'https://picsum.photos/seed/' + user.photoSeed + '/160/160';
+    document.getElementById('account-photo').alt = user.name + "'s profile photo";
+    document.getElementById('account-name').textContent = user.name;
+    document.getElementById('account-email').textContent = user.email;
+    document.getElementById('account-role').textContent = user.role;
+
+    var favoritesGrid = document.getElementById('favorites-grid');
+    var favoritesEmpty = document.getElementById('favorites-empty');
+    var favorites = PML.getFavorites();
+    favorites.forEach(function (lessonId) {
+      favoritesEmpty.insertAdjacentHTML('beforebegin', PML.lessonCardMarkup(lessonId));
     });
+    favoritesEmpty.hidden = favorites.length !== 0;
+    PML.initSaveButtons(favoritesGrid, function (lessonId, saved) {
+      if (!saved) {
+        var card = favoritesGrid.querySelector('.lesson-card[data-lesson="' + lessonId + '"]');
+        if (card) card.remove();
+        favoritesEmpty.hidden = favoritesGrid.querySelectorAll('.lesson-card').length !== 0;
+      }
+    });
+
+    var historyList = document.getElementById('history-list');
+    var historyEmpty = document.getElementById('history-empty');
+    var completed = PML.getCompleted();
+    historyList.innerHTML = completed.map(PML.historyItemMarkup).join('');
+    historyEmpty.hidden = completed.length !== 0;
   </script>
 </body>
 </html>

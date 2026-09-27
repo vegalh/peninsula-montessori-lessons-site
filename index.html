@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peninsula Montessori Lessons</title>
 <link rel="stylesheet" href="css/style.css">
-<script src="js/site.js" defer></script>
+<script src="js/site.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -52,6 +52,7 @@
           <option value="seasons">Seasons</option>
           <option value="dinosaurs">Dinosaurs</option>
           <option value="holidays">Holidays</option>
+          <option value="practical-life">Practical Life</option>
         </select>
       </label>
 
@@ -60,6 +61,7 @@
         <select name="area" aria-label="Area filter">
           <option value="">All</option>
           <option value="practical-life">Practical Life</option>
+          <option value="sensorial">Sensorial</option>
           <option value="art">Art</option>
           <option value="science">Science</option>
           <option value="math">Math</option>
@@ -74,6 +76,9 @@
     <div class="category-grid" role="group" aria-label="Browse by area">
       <button type="button" class="category-btn" data-area="practical-life" aria-pressed="false">
         <span class="category-icon" style="--category-color: var(--terracotta)">🍂</span> Practical Life
+      </button>
+      <button type="button" class="category-btn" data-area="sensorial" aria-pressed="false">
+        <span class="category-icon" style="--category-color: var(--peach)">🧩</span> Sensorial
       </button>
       <button type="button" class="category-btn" data-area="art" aria-pressed="false">
         <span class="category-icon" style="--category-color: var(--dusty-pink)">🌈</span> Art
@@ -100,7 +105,7 @@
 
     <div class="section-title">
       <h2>Popular This Week</h2>
-      <a href="#">See All &gt;</a>
+      <a href="#" id="see-all-link">See All &gt;</a>
     </div>
 
     <section class="lesson-grid" aria-label="Lessons plans">
@@ -157,6 +162,132 @@
           </div>
           <p class="lesson-card-meta">3&ndash;5 years &middot; Art</p>
           <p class="lesson-card-stats"><span>&#9689; 20 min</span><span>&#9633; 6 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="storytime-caterpillar" data-age="2-3" data-topic="animals" data-area="language">
+        <a href="storytime-caterpillar.html">
+          <img src="https://picsum.photos/seed/storytime-caterpillar/400/300" alt="Photo coming soon: storytime with book and caterpillar props">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Storytime: The Very Hungry Caterpillar</p>
+            <button type="button" class="save-btn" data-lesson="storytime-caterpillar" aria-pressed="false" aria-label="Save Storytime: The Very Hungry Caterpillar">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Language</p>
+          <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; Book + props</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="cleaning-mirror" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="cleaning-mirror.html">
+          <img src="images/cleaning-mirror.jpg" alt="a child spraying and wiping a mirror clean">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Cleaning Mirror</p>
+            <button type="button" class="save-btn" data-lesson="cleaning-mirror" aria-pressed="false" aria-label="Save Cleaning Mirror">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="making-orange-juice" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="making-orange-juice.html">
+          <img src="images/making-orange-juice.jpg" alt="a child using a hand juicer to make orange juice">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Making Orange Juice</p>
+            <button type="button" class="save-btn" data-lesson="making-orange-juice" aria-pressed="false" aria-label="Save Making Orange Juice">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 12 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="mopping" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="mopping.html">
+          <img src="images/mopping.jpg" alt="a child pushing a child-sized mop across the floor">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Mopping</p>
+            <button type="button" class="save-btn" data-lesson="mopping" aria-pressed="false" aria-label="Save Mopping">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="peeling-and-cutting-egg" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="peeling-and-cutting-egg.html">
+          <img src="images/peeling-and-cutting-egg.jpg" alt="a child peeling and slicing a hard-boiled egg">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Peeling and Cutting Egg</p>
+            <button type="button" class="save-btn" data-lesson="peeling-and-cutting-egg" aria-pressed="false" aria-label="Save Peeling and Cutting Egg">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 12 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="peeling-cabbage" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="peeling-cabbage.html">
+          <img src="images/peeling-cabbage.jpg" alt="a child peeling leaves from a cabbage">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Peeling Cabbage</p>
+            <button type="button" class="save-btn" data-lesson="peeling-cabbage" aria-pressed="false" aria-label="Save Peeling Cabbage">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 2 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="peeling-orange" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="peeling-orange.html">
+          <img src="images/peeling-orange.jpg" alt="a child peeling an orange">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Peeling Orange</p>
+            <button type="button" class="save-btn" data-lesson="peeling-orange" aria-pressed="false" aria-label="Save Peeling Orange">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 10 min</span><span>&#9633; 3 materials</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="red-rods-maze" data-age="2-3" data-topic="practical-life" data-area="sensorial">
+        <a href="red-rods-maze.html">
+          <img src="images/red-rods-maze.jpg" alt="a child walking along a maze path made of red rods">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Red Rods Maze</p>
+            <button type="button" class="save-btn" data-lesson="red-rods-maze" aria-pressed="false" aria-label="Save Red Rods Maze">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Sensorial</p>
+          <p class="lesson-card-stats"><span>&#9689; 15 min</span><span>&#9633; Red rods set</span></p>
+        </div>
+      </article>
+
+      <article class="lesson-card" data-lesson="wipe-the-board" data-age="2-3" data-topic="practical-life" data-area="practical-life">
+        <a href="wipe-the-board.html">
+          <img src="images/wipe-the-board.jpg" alt="a child erasing a chalkboard">
+        </a>
+        <div class="lesson-card-body">
+          <div class="lesson-card-header">
+            <p class="lesson-card-title">Wipe the Board</p>
+            <button type="button" class="save-btn" data-lesson="wipe-the-board" aria-pressed="false" aria-label="Save Wipe the Board">&hearts;</button>
+          </div>
+          <p class="lesson-card-meta">2&ndash;3 years &middot; Practical Life</p>
+          <p class="lesson-card-stats"><span>&#9689; 8 min</span><span>&#9633; 2 materials</span></p>
         </div>
       </article>
     </section>
@@ -260,6 +391,20 @@
         syncPillLabel(areaSelect);
         applyFilters();
       });
+    });
+
+    var seeAllLink = document.getElementById('see-all-link');
+    seeAllLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      searchInput.value = '';
+      ageSelect.value = '';
+      topicSelect.value = '';
+      areaSelect.value = '';
+      [ageSelect, topicSelect, areaSelect].forEach(syncPillLabel);
+      categoryButtons.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      applyFilters();
     });
 
     PML.initSaveButtons();

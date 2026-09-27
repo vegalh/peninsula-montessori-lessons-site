@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switch Account &middot; Peninsula Montessori Lessons</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/site.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>Switch Account</h1>
+      <p class="page-intro">Yoyo and Reki share the same access</p>
+    </div>
+  </header>
+
+  <main class="page login-page">
+    <div class="login-list" id="login-list"></div>
+    <p class="page-intro">This is a shared prototype account switcher &mdash; no password is required, and Yoyo and Reki have equal access to everything.</p>
+  </main>
+
+  <script>
+    var loginList = document.getElementById('login-list');
+    var currentId = PML.getCurrentUserId();
+
+    Object.keys(PML.USERS).forEach(function (id) {
+      var user = PML.USERS[id];
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'login-card' + (id === currentId ? ' is-active' : '');
+      card.innerHTML =
+        '<img class="login-photo" src="https://picsum.photos/seed/' + user.photoSeed + '/120/120" alt="' + user.name + '\'s profile photo">' +
+        '<span class="login-name">' + user.name + '</span>' +
+        '<span class="badge">' + user.role + '</span>';
+      card.addEventListener('click', function () {
+        PML.setCurrentUserId(id);
+        window.location.href = 'account.html';
+      });
+      loginList.appendChild(card);
+    });
+  </script>
+</body>
+</html>
