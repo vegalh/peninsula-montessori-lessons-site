@@ -10,14 +10,13 @@
 <body>
   <header class="site-header">
     <div>
-      <h1>Discover</h1>
+      <h1>Rootmap</h1>
       <p class="page-intro">Meaningful activities for curious minds</p>
     </div>
-    <button type="button" class="icon-btn" id="search-toggle" aria-expanded="false" aria-controls="search-bar" aria-label="Search activities">🔍</button>
   </header>
 
   <main class="page">
-    <form class="search-bar" id="search-bar" role="search">
+    <form class="search-bar is-open" id="search-bar" role="search">
       <input type="search" name="q" placeholder="Try &quot;ocean activities&quot;, &quot;fine motor&quot;, &quot;fall&quot;...">
       <button type="submit" class="btn">Search</button>
     </form>
@@ -71,36 +70,6 @@
           <option value="culture">Culture</option>
         </select>
       </label>
-    </div>
-
-    <div class="category-grid" role="group" aria-label="Browse by area">
-      <button type="button" class="category-btn" data-area="practical-life" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--terracotta)">🍂</span> Practical Life
-      </button>
-      <button type="button" class="category-btn" data-area="sensorial" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--peach)">🧩</span> Sensorial
-      </button>
-      <button type="button" class="category-btn" data-area="art" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--dusty-pink)">🌈</span> Art
-      </button>
-      <button type="button" class="category-btn" data-area="science" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--sage)">🌱</span> Science
-      </button>
-      <button type="button" class="category-btn" data-area="math" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--soft-yellow)">🧱</span> Math
-      </button>
-      <button type="button" class="category-btn" data-area="language" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--peach)">📖</span> Language
-      </button>
-      <button type="button" class="category-btn" data-area="music" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--dusty-pink)">🎵</span> Music
-      </button>
-      <button type="button" class="category-btn" data-area="movement" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--terracotta)">🏃</span> Movement
-      </button>
-      <button type="button" class="category-btn" data-area="culture" aria-pressed="false">
-        <span class="category-icon" style="--category-color: var(--sage)">🌎</span> Culture
-      </button>
     </div>
 
     <div class="section-title">
@@ -236,21 +205,11 @@
   <script>
     var cards = Array.from(document.querySelectorAll('.lesson-card'));
     var emptyState = document.getElementById('empty-state');
-    var searchToggle = document.getElementById('search-toggle');
     var searchBar = document.getElementById('search-bar');
     var searchInput = searchBar.querySelector('input[name="q"]');
     var ageSelect = document.querySelector('select[name="age"]');
     var topicSelect = document.querySelector('select[name="topic"]');
     var areaSelect = document.querySelector('select[name="area"]');
-    var categoryButtons = Array.from(document.querySelectorAll('.category-btn'));
-
-    searchToggle.addEventListener('click', function () {
-      var isOpen = searchBar.classList.toggle('is-open');
-      searchToggle.setAttribute('aria-expanded', String(isOpen));
-      if (isOpen) {
-        searchInput.focus();
-      }
-    });
 
     // Keep each pill's visible label in sync with its hidden native select.
     function syncPillLabel(select) {
@@ -259,18 +218,11 @@
       label.textContent = select.value ? option.textContent : 'All';
     }
 
-    function activeArea() {
-      var pressed = categoryButtons.find(function (btn) {
-        return btn.getAttribute('aria-pressed') === 'true';
-      });
-      return pressed ? pressed.dataset.area : areaSelect.value;
-    }
-
     function applyFilters() {
       var query = searchInput.value.trim().toLowerCase();
       var age = ageSelect.value;
       var topic = topicSelect.value;
-      var area = activeArea();
+      var area = areaSelect.value;
       var visibleCount = 0;
 
       cards.forEach(function (card) {
@@ -300,25 +252,6 @@
     [ageSelect, topicSelect, areaSelect].forEach(function (select) {
       select.addEventListener('change', function () {
         syncPillLabel(select);
-        if (select === areaSelect) {
-          categoryButtons.forEach(function (btn) {
-            btn.setAttribute('aria-pressed', String(btn.dataset.area === select.value));
-          });
-        }
-        applyFilters();
-      });
-    });
-
-    categoryButtons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var alreadyPressed = btn.getAttribute('aria-pressed') === 'true';
-        categoryButtons.forEach(function (other) {
-          other.setAttribute('aria-pressed', 'false');
-        });
-        var nowPressed = !alreadyPressed;
-        btn.setAttribute('aria-pressed', String(nowPressed));
-        areaSelect.value = nowPressed ? btn.dataset.area : '';
-        syncPillLabel(areaSelect);
         applyFilters();
       });
     });
@@ -331,9 +264,6 @@
       topicSelect.value = '';
       areaSelect.value = '';
       [ageSelect, topicSelect, areaSelect].forEach(syncPillLabel);
-      categoryButtons.forEach(function (btn) {
-        btn.setAttribute('aria-pressed', 'false');
-      });
       applyFilters();
     });
 
