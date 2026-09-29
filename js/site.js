@@ -5,14 +5,14 @@
   'use strict';
 
   var LESSONS = {
-    'cleaning-mirror': { title: 'Cleaning Mirror', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'cleaning-mirror.html', image: 'images/cleaning-mirror.jpg', alt: 'a child spraying and wiping a mirror clean' },
-    'making-orange-juice': { title: 'Making Orange Juice', age: '2\u20133 years', area: 'Practical Life', duration: '12 min', materials: 3, href: 'making-orange-juice.html', image: 'images/making-orange-juice.jpg', alt: 'a child using a hand juicer to make orange juice' },
-    'mopping': { title: 'Mopping', age: '2\u20133 years', area: 'Practical Life', duration: '15 min', materials: 3, href: 'mopping.html', image: 'images/mopping.jpg', alt: 'a child pushing a child-sized mop across the floor' },
-    'peeling-and-cutting-egg': { title: 'Peeling and Cutting Egg', age: '2\u20133 years', area: 'Practical Life', duration: '12 min', materials: 3, href: 'peeling-and-cutting-egg.html', image: 'images/peeling-and-cutting-egg.jpg', alt: 'a child peeling and slicing a hard-boiled egg' },
-    'peeling-cabbage': { title: 'Peeling Cabbage', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 2, href: 'peeling-cabbage.html', image: 'images/peeling-cabbage.jpg', alt: 'a child peeling leaves from a cabbage' },
-    'peeling-orange': { title: 'Peeling Orange', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'peeling-orange.html', image: 'images/peeling-orange.jpg', alt: 'a child peeling an orange' },
-    'red-rods-maze': { title: 'Red Rods Maze', age: '2\u20133 years', area: 'Sensorial', duration: '15 min', materials: 'Red rods set', href: 'red-rods-maze.html', image: 'images/red-rods-maze.jpg', alt: 'a child walking along a maze path made of red rods' },
-    'wipe-the-board': { title: 'Wipe the Board', age: '2\u20133 years', area: 'Practical Life', duration: '8 min', materials: 2, href: 'wipe-the-board.html', image: 'images/wipe-the-board.jpg', alt: 'a child erasing a chalkboard' }
+    'cleaning-mirror': { title: 'Cleaning Mirror', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'lessons/cleaning-mirror.html', image: 'images/cleaning-mirror.jpg', alt: 'a child spraying and wiping a mirror clean' },
+    'making-orange-juice': { title: 'Making Orange Juice', age: '2\u20133 years', area: 'Practical Life', duration: '12 min', materials: 3, href: 'lessons/making-orange-juice.html', image: 'images/making-orange-juice.jpg', alt: 'a child using a hand juicer to make orange juice' },
+    'mopping': { title: 'Mopping', age: '2\u20133 years', area: 'Practical Life', duration: '15 min', materials: 3, href: 'lessons/mopping.html', image: 'images/mopping.jpg', alt: 'a child pushing a child-sized mop across the floor' },
+    'peeling-and-cutting-egg': { title: 'Peeling and Cutting Egg', age: '2\u20133 years', area: 'Practical Life', duration: '12 min', materials: 3, href: 'lessons/peeling-and-cutting-egg.html', image: 'images/peeling-and-cutting-egg.jpg', alt: 'a child peeling and slicing a hard-boiled egg' },
+    'peeling-cabbage': { title: 'Peeling Cabbage', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 2, href: 'lessons/peeling-cabbage.html', image: 'images/peeling-cabbage.jpg', alt: 'a child peeling leaves from a cabbage' },
+    'peeling-orange': { title: 'Peeling Orange', age: '2\u20133 years', area: 'Practical Life', duration: '10 min', materials: 3, href: 'lessons/peeling-orange.html', image: 'images/peeling-orange.jpg', alt: 'a child peeling an orange' },
+    'red-rods-maze': { title: 'Red Rods Maze', age: '2\u20133 years', area: 'Sensorial', duration: '15 min', materials: 'Red rods set', href: 'lessons/red-rods-maze.html', image: 'images/red-rods-maze.jpg', alt: 'a child walking along a maze path made of red rods' },
+    'wipe-the-board': { title: 'Wipe the Board', age: '2\u20133 years', area: 'Practical Life', duration: '8 min', materials: 2, href: 'lessons/wipe-the-board.html', image: 'images/wipe-the-board.jpg', alt: 'a child erasing a chalkboard' }
   };
 
   var USERS = {
