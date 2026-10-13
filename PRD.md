@@ -86,3 +86,13 @@ Each lesson plan page should display:
 
 - How will lesson plan content be imported/seeded into the system?
 - Will additional teachers beyond Yoyo/Reki need accounts, and if so, will permissions differ then?
+
+## 11. Later (ranked by client)
+
+Features Yoyo asked for but that are not built yet, in the order she ranked them:
+
+1. **Observation system for teachers** — a tool using Montessori terminology to log observations and communicate progress with parents.
+2. **Songs and a book list** — attach recommended songs/books to lessons, in addition to the existing music/recording upload.
+3. **Native mobile app** (carried over from Section 9).
+4. **In-app lesson plan creation/editing form** (carried over from Section 9).
+5. **Separate admin role/permissions** (carried over from Section 9).
