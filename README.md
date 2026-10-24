@@ -12,7 +12,7 @@ Yoyo, a pre-school teacher who doesn't have much time to prepare lessons, opens 
 
 ## What's a piece of AI output you didn't accept as-is?
 
-While drafting [FEEDBACK.md](FEEDBACK.md), the AI's first pass at the "Later" section said the observation-system feature was shelved because it was "too hard to build." I corrected that — the real reason was feasibility, not build difficulty: at a 1:10 teacher-to-child ratio, there's no way a single teacher can actually record observations for 10 children, while a parent tracking their own 1-4 kids is realistic. The AI rewrote the line to reflect that before it was committed: [5924000](https://github.com/vegalh/peninsula-montessori-lessons-site/commit/592400056405ef033e57aae908000b8a66f496bb).
+The first build of the Discover/main page didn't match my chathelpdraw sketch, wasn't mobile-appropriate, and its filters/search bar were fake — buttons just toggled their own color with no logic tied to the lesson cards. It also nested the save/heart `<button>` inside each card's `<a>`, so clicking it navigated to the lesson instead of saving it. I rejected that pass and asked for a working, phone-appropriate rebuild. The AI rebuilt it with real `data-*`-attribute filtering and the save button moved to sit as a sibling of the link instead of nested inside it — both now documented as conventions in [AGENTS.md](AGENTS.md) so future changes don't repeat the bug — and the fix shipped in [ccf16ee](https://github.com/vegalh/peninsula-montessori-lessons-site/commit/ccf16ee6920e1333a74b10297ac7f5bca485f473).
 
 ## Status
 
